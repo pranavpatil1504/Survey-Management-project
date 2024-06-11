@@ -3,11 +3,10 @@ class UserModel {
     private $db;
 
     public function __construct() {
-        // Modify the connection details to match your database
-        $host = 'localhost'; // Change this to your host
-        $username = 'root'; // Change this to your username
-        $password = ''; // Change this to your password
-        $database = 'app'; // Change this to your database name
+        $host = 'localhost';
+        $username = 'root'; 
+        $password = ''; 
+        $database = 'app'; 
 
         // Create a new database connection
         $this->db = new mysqli($host, $username, $password, $database);
@@ -18,7 +17,10 @@ class UserModel {
         }
     }
 
-    public function createUser($username, $email, $hashedPassword, $registrationIp) {
+    public function createUser($username, $email, $hashedPassword) {
+        // Get the user's IP address
+        $registrationIp = $_SERVER['REMOTE_ADDR'];
+
         // Prepare the SQL statement
         $stmt = $this->db->prepare("INSERT INTO users (username, hashed_pass, email, registration_ip) VALUES (?, ?, ?, ?)");
 
@@ -31,9 +33,8 @@ class UserModel {
         // Check for errors
         if ($stmt->error) {
             die("Error: " . $stmt->error);
-        }else{
+        } else {
             header('Location: home.php');
-            $stmt->close();
             exit;
         }
         // Close the statement
