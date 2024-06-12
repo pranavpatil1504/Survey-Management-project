@@ -15,4 +15,5 @@ CREATE TABLE user_login_history (
     user_id INT,
     login_timestamp DATETIME,
     ip_address VARCHAR(45)
+    ALTER TABLE user_login_history ADD COLUMN username VARCHAR(255);
 );
