@@ -50,14 +50,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </span>
                             </div>
                         </div>
-                        <?php if (isset($errors['password']) || isset($errors['login'])): ?>
-                            <div class="invalid-feedback"><?= $errors['password'] ?? $errors['login'] ?></div>
+                        <?php if (isset($errors['password']) && $errors['password'] === 'Incorrect password.'): ?>
+                            <div class="invalid-feedback">Incorrect Password. Please try again.</div>
+                        <?php elseif (isset($errors['password'])): ?>
+                            <div class="invalid-feedback"><?= $errors['password'] ?></div>
                         <?php endif; ?>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                 </form>
                 <div class="text-center mt-3">
                     <p>No account? <a href="signup.php" class="btn btn-link">Sign Up</a></p>
+                </div>
+                <div class="text-center mt-2">
+                    <p>Forgot your password? <a href="forgetpsw.php" class="btn btn-link">Reset Password</a></p>
                 </div>
             </div>
         </div>
