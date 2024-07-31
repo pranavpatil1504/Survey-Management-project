@@ -1,5 +1,5 @@
 # Survey Management WebApp
-  Survey Management System using PHP, MySQL, Javascript and Bootstrap. Explored about Real-time Data Visualization, Session Restoration, Password Hashing, Captcha Verification, and Session Data Parsing. Developed for Bhabha Atomic Research Centre ( BARC ) Scientific Information Resource Division ( SIRD ).
+  Survey Management System using PHP, MySQL, Javascript and Bootstrap. Explored about Real-time Data Visualization, Session Restoration, Password Hashing, Captcha Verification, and Session Data Parsing. Developed for Bhabha Atomic Research Centre (BARC) Scientific Information Resource Division (SIRD).
 
 ## How to Download and Install XAMPP from Google Chrome
 
